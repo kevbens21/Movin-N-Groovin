@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movin 'n' Groovin' | Children's Dance & Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink:       #f7c5d0;
+      --pink-deep:  #e8829a;
+      --pink-soft:  #fdeef2;
+      --lavender:   #c9b8e8;
+      --lavender-soft: #f0ebfb;
+      --lavender-deep: #8b6bbf;
+      --gold:       #c9a84c;
+      --gold-light: #f0d98a;
+      --white:      #ffffff;
+      --off-white:  #fdf8fc;
+      --text-dark:  #2d2034;
+      --text-mid:   #5a4a6b;
+      --text-light: #8a7a9b;
+      --placeholder-bg: #ece8f0;
+      --radius:     14px;
+      --shadow:     0 4px 24px rgba(90,60,120,0.10);
+      --shadow-hover: 0 8px 36px rgba(90,60,120,0.18);
+      --transition: 0.25s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    button, input, textarea, select { font-family: inherit; }
+
+    /* ─── PLACEHOLDER BOXES ─── */
+    .placeholder {
+      background: var(--placeholder-bg);
+      border: 2px dashed var(--lavender-deep);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      color: var(--text-mid);
+      font-style: italic;
+      font-size: 0.85rem;
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.4;
+    }
+
+    /* ─── UTILITIES ─── */
+    .container { width: min(90%, 1140px); margin-inline: auto; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--text-mid);
+      font-size: 1.05rem;
+      max-width: 560px;
+    }
+    .section-header { margin-bottom: 3rem; }
+    .section-header.centered { text-align: center; }
+    .section-header.centered .section-sub { margin-inline: auto; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+      letter-spacing: 0.03em;
+    }
+    .btn-primary {
+      background: var(--pink-deep);
+      color: var(--white);
+      border-color: var(--pink-deep);
+    }
+    .btn-primary:hover { background: #d4607a; border-color: #d4607a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,130,154,0.35); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+    .btn-outline:hover { background: var(--white); color: var(--pink-deep); transform: translateY(-2px); }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--lavender-deep);
+      border-color: var(--lavender-deep);
+    }
+    .btn-outline-dark:hover { background: var(--lavender-deep); color: var(--white); transform: translateY(-2px); }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover { background: #b08a30; border-color: #b08a30; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.35); }
+
+    .gold-divider {
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-light), var(--gold));
+      border-radius: 2px;
+      margin: 1rem 0 1.5rem;
+    }
+    .gold-divider.centered { margin-inline: auto; }
+
+    /* ─── NAVIGATION ─── */
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,184,232,0.3);
+      box-shadow: 0 2px 16px rgba(90,60,120,0.07);
+      transition: var(--transition);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0;
+      gap: 1rem;
+    }
+    .nav-logo .placeholder {
+      width: 160px;
+      height: 52px;
+      font-size: 0.7rem;
+      border-radius: 8px;
+    }
+    .nav-logo img {
+      width: 190px;
+      height: auto;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+    .nav-links a {
+      padding: 0.45rem 0.9rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .nav-links a:hover { background: var(--lavender-soft); color: var(--lavender-deep); }
+    .nav-links a.active { color: var(--pink-deep); }
+    .nav-social {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .nav-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--pink-soft);
+      color: var(--pink-deep);
+      transition: var(--transition);
+    }
+    .nav-social a:hover { background: var(--pink-deep); color: var(--white); transform: scale(1.1); }
+    .nav-social svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2.5px;
+      background: var(--text-mid);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1rem 0 1.25rem;
+      border-top: 1px solid rgba(201,184,232,0.3);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .mobile-menu a:hover { background: var(--lavender-soft); color: var(--lavender-deep); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 65% center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(45,32,52,0.55) 0%, rgba(45,32,52,0.25) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.9);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.25rem;
+    }
+    .hero-content h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.2);
+    }
+    .hero-content p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ─── FEATURES ─── */
+    #features {
+      padding: 5rem 0;
+      background: var(--off-white);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+    }
+    .feature-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-top: 4px solid transparent;
+    }
+    .feature-card:nth-child(1) { border-top-color: var(--pink-deep); }
+    .feature-card:nth-child(2) { border-top-color: var(--gold); }
+    .feature-card:nth-child(3) { border-top-color: var(--lavender-deep); }
+    .feature-card:nth-child(4) { border-top-color: #7ec8a0; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .feature-icon {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-dark);
+    }
+    .feature-card p {
+      font-size: 0.93rem;
+      color: var(--text-mid);
+    }
+
+    /* ─── CLASSES ─── */
+    #classes {
+      padding: 5rem 0;
+      background: var(--white);
+    }
+    .classes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+    .class-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--white);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .class-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .class-card .placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 0;
+      border: none;
+      border-bottom: 2px dashed var(--lavender);
+      background: linear-gradient(135deg, var(--pink-soft), var(--lavender-soft));
+      font-size: 0.82rem;
+    }
+    .class-body {
+      padding: 1.4rem 1.5rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .class-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .class-body h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .class-body p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      padding: 5rem 0;
+      background: var(--lavender-soft);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .about-photo .placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      max-height: 520px;
+    }
+    .about-photo img {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .about-text .section-label { display: block; }
+    .about-text h2 { margin-bottom: 0.5rem; }
+    .about-text p {
+      color: var(--text-mid);
+      margin-bottom: 1.25rem;
+      font-size: 0.97rem;
+    }
+    .about-stats {
+      display: flex;
+      gap: 2rem;
+      margin: 1.5rem 0 2rem;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--pink-deep);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── GALLERY ─── */
+    #gallery {
+      padding: 5rem 0;
+      background: var(--white);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .gallery-item .placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 0;
+      border: none;
+      background: linear-gradient(135deg, var(--pink-soft), var(--lavender-soft));
+      font-size: 0.8rem;
+      transition: var(--transition);
+    }
+    .gallery-item:nth-child(even) .placeholder { background: linear-gradient(135deg, var(--lavender-soft), #fdeef2); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(139,107,191,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .gallery-overlay span {
+      color: var(--white);
+      font-size: 1.8rem;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: var(--transition);
+    }
+    .gallery-item:hover .gallery-overlay { background: rgba(139,107,191,0.45); }
+    .gallery-item:hover .gallery-overlay span { opacity: 1; transform: scale(1); }
+
+    /* lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20,10,30,0.88);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-inner {
+      position: relative;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-width: 700px;
+      width: 100%;
+    }
+    .lightbox-inner .placeholder { aspect-ratio: 4/3; border-radius: 0; border: none; font-size: 1rem; }
+    .lightbox-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      border-radius: 50%;
+      width: 38px; height: 38px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-dark);
+      z-index: 10;
+      transition: var(--transition);
+    }
+    .lightbox-close:hover { background: var(--pink-deep); color: var(--white); }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, var(--pink-soft) 0%, var(--lavender-soft) 100%);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: var(--transition);
+    }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      line-height: 0.8;
+      color: var(--pink);
+      position: absolute;
+      top: 1.25rem;
+      left: 1.5rem;
+      pointer-events: none;
+    }
+    .stars {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+    .testimonial-card p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      font-style: italic;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .testimonial-author {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--lavender-deep);
+    }
+
+    /* ─── SCHEDULE ─── */
+    #schedule {
+      padding: 5rem 0;
+      background: var(--white);
+    }
+    .schedule-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .schedule-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      font-size: 0.88rem;
+    }
+    thead tr { background: var(--lavender-deep); color: var(--white); }
+    thead th {
+      padding: 0.85rem 0.75rem;
+      text-align: left;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.82rem;
+    }
+    tbody tr:nth-child(even) { background: var(--lavender-soft); }
+    tbody tr:hover { background: var(--pink-soft); }
+    tbody td { padding: 0.75rem; color: var(--text-mid); vertical-align: top; }
+    tbody td:first-child { font-weight: 700; color: var(--text-dark); }
+    .time-slot { font-size: 0.8rem; color: var(--text-light); }
+
+    .schedule-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .info-box {
+      background: var(--lavender-soft);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      border-left: 4px solid var(--lavender-deep);
+    }
+    .info-box h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .info-box ul { display: flex; flex-direction: column; gap: 0.4rem; }
+    .info-box li { font-size: 0.9rem; color: var(--text-mid); padding-left: 1.2rem; position: relative; }
+    .info-box li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 0.65rem; top: 3px; }
+    .schedule-dl { margin-top: 0.5rem; }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      padding: 5rem 0;
+      background: var(--lavender-soft);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .contact-form { background: var(--white); border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow); }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1.5px solid rgba(201,184,232,0.5);
+      border-radius: 8px;
+      font-size: 0.93rem;
+      color: var(--text-dark);
+      background: var(--off-white);
+      transition: var(--transition);
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--lavender-deep);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(139,107,191,0.12);
+    }
+    textarea { resize: vertical; min-height: 130px; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.75rem; }
+    .contact-info h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+    .info-items { display: flex; flex-direction: column; gap: 1rem; }
+    .info-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .info-icon {
+      width: 42px; height: 42px;
+      background: var(--pink-soft);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .info-item-text strong { display: block; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 0.2rem; }
+    .info-item-text span { font-size: 0.93rem; color: var(--text-mid); }
+    .map-placeholder .placeholder {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, var(--lavender-soft), var(--pink-soft));
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.75);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 2.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 2rem;
+    }
+    .footer-brand .placeholder {
+      width: 140px; height: 46px;
+      margin-bottom: 1rem;
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.65rem;
+    }
+    .footer-brand img {
+      width: 180px;
+      height: auto;
+      margin-bottom: 1rem;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.2rem;
+    }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.65; }
+    .footer-social { display: flex; gap: 0.6rem; margin-top: 1.25rem; }
+    .footer-social a {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.75);
+      transition: var(--transition);
+    }
+    .footer-social a:hover { background: var(--pink-deep); color: var(--white); }
+    .footer-social svg { width: 17px; height: 17px; fill: currentColor; }
+    .footer-col h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      transition: var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--pink); }
+    .footer-contact {
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+    }
+    .footer-contact a { color: inherit; transition: var(--transition); }
+    .footer-contact a:hover { color: var(--pink); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.6); transition: var(--transition); }
+    .footer-bottom a:hover { color: var(--pink); }
+
+    /* ─── SCROLL TO TOP ─── */
+    #scroll-top {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      background: var(--pink-deep);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      width: 46px; height: 46px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(232,130,154,0.4);
+      transition: var(--transition);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 900;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #scroll-top.visible { opacity: 1; pointer-events: auto; }
+    #scroll-top:hover { background: #d4607a; transform: translateY(-3px); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .about-grid,
+      .schedule-wrap,
+      .contact-grid { grid-template-columns: 1fr; }
+      .about-photo { order: -1; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .nav-links, .nav-social { display: none; }
+      .hamburger { display: flex; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-stats { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<header id="navbar" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Movin 'n' Groovin' Home">
+        <img src="file:///C:/Users/kevin/.cursor/projects/c-Users-kevin-Downloads-Test-Websites/assets/c__Users_kevin_AppData_Roaming_Cursor_User_workspaceStorage_54ddbd1d3fc9daedb215f9b9128d46e4_images_image-b1517b49-e7ae-455f-82d7-6bf17bb43d9f.png" alt="Movin 'n' Groovin' logo" />
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-social" aria-label="Social media links">
+        <a href="https://www.facebook.com/childrensdanceandfitness/" target="_blank" rel="noopener noreferrer" aria-label="Movin 'n' Groovin' on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <a href="#hero">Home</a>
+      <a href="#classes">Classes</a>
+      <a href="#about">About Us</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section id="hero" aria-labelledby="hero-heading">
+  <div class="hero-bg">
+    <img src="images/hero.png" alt="Young dancers practicing ballet in a bright studio" />
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-badge">✨ Enrolling Now for Fall 2026</span>
+      <h1 id="hero-heading">Where Every Child Finds Their Rhythm</h1>
+      <p>Movin 'n' Groovin' — Ballet &bull; Hip Hop &bull; Yoga &bull; Fitness for Ages 2 to 12</p>
+      <div class="hero-btns">
+        <a href="#classes" class="btn btn-primary">View Classes</a>
+        <a href="#contact" class="btn btn-outline">Register Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     WHAT WE OFFER
+══════════════════════════════════════ -->
+<section id="features" aria-labelledby="features-heading">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title" id="features-heading">What Makes Movin 'n' Groovin' Special</h2>
+      <span class="gold-divider centered" aria-hidden="true"></span>
+      <p class="section-sub">We create a warm, nurturing space where young dancers grow in confidence, creativity, and joy — every single class.</p>
+    </div>
+    <div class="features-grid">
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🩰</div>
+        <h3>Specialized Instruction</h3>
+        <p>Our age-appropriate curriculum is built around safe, structured learning that develops technique, musicality, and body awareness in a positive, encouraging environment.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🌟</div>
+        <h3>Annual Recitals</h3>
+        <p>Every dancer gets to shine on stage! We hold two recitals per year — one at the end of each semester — giving students a meaningful goal to work toward and a memorable performance experience.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🏫</div>
+        <h3>School Partnerships</h3>
+        <p>We bring the joy of dance directly to children through our partnerships with local preschools and daycares, making quality dance education accessible to more families in our community.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">💪</div>
+        <h3>Fun &amp; Fitness</h3>
+        <p>Beyond technique, every class emphasizes confidence, creativity, and physical health. Our students develop strong bodies and even stronger self-esteem — in an atmosphere that always puts fun first.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CLASSES
+══════════════════════════════════════ -->
+<section id="classes" aria-labelledby="classes-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Programs</span>
+      <h2 class="section-title" id="classes-heading">Classes for Every Little Dancer</h2>
+      <span class="gold-divider" aria-hidden="true"></span>
+      <p class="section-sub">From first plié to freestyle flow — we have the perfect class waiting for your child.</p>
+    </div>
+    <div class="classes-grid">
+
+      <article class="class-card">
+        <div class="placeholder" role="img" aria-label="Class image: young children in ballet attire at the barre">[CLASS IMAGE: Ballet for Kids]</div>
+        <div class="class-body">
+          <span class="class-tag">Ages 2 – 12</span>
+          <h3>Ballet for Kids</h3>
+          <p>A joyful introduction to classical ballet fundamentals — building posture, grace, coordination, and a lifelong love of movement in a structured yet playful setting.</p>
+          <a href="#contact" class="btn btn-outline-dark">Learn More</a>
+        </div>
+      </article>
+
+      <article class="class-card">
+        <div class="placeholder" role="img" aria-label="Class image: children dancing hip hop in a studio">[CLASS IMAGE: Hip Hop]</div>
+        <div class="class-body">
+          <span class="class-tag">Ages 3 – 12</span>
+          <h3>Hip Hop</h3>
+          <p>High-energy choreography set to age-appropriate music that lets kids express themselves freely. Builds rhythm, musicality, and genuine confidence on the dance floor.</p>
+          <a href="#contact" class="btn btn-outline-dark">Learn More</a>
+        </div>
+      </article>
+
+      <article class="class-card">
+        <div class="placeholder" role="img" aria-label="Class image: children in a yoga for kids class">[CLASS IMAGE: Yoga for Kids]</div>
+        <div class="class-body">
+          <span class="class-tag">Ages 2 – 12</span>
+          <h3>Yoga for Kids</h3>
+          <p>Calming, imaginative yoga sessions designed just for children. Students build flexibility, focus, and mindfulness through storytelling, poses, and breathing exercises.</p>
+          <a href="#contact" class="btn btn-outline-dark">Learn More</a>
+        </div>
+      </article>
+
+      <article class="class-card">
+        <div class="placeholder" role="img" aria-label="Class image: children at a summer dance camp">[CLASS IMAGE: Summer Camp]</div>
+        <div class="class-body">
+          <span class="class-tag">Seasonal — Summer</span>
+          <h3>Summer Camp</h3>
+          <p>A week-long immersive dance adventure combining ballet, hip hop, yoga, games, and crafts. The perfect summer experience for young movers who want to explore every style!</p>
+          <a href="#contact" class="btn btn-outline-dark">Learn More</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="images/stacey-benson.png" alt="Stacey Benson, founder and instructor of Movin 'n' Groovin'" />
+      </div>
+      <div class="about-text">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title" id="about-heading">Passion, Heart &amp; a Love of Dance</h2>
+        <span class="gold-divider" aria-hidden="true"></span>
+        <p>Stacey Benson, founder and instructor of Movin 'n' Groovin', built this studio from a deep love of teaching children through dance, movement, and joyful expression.</p>
+        <p>At Movin 'n' Groovin', we believe every child deserves the chance to move, express, and grow. Our small class sizes, caring one-on-one instruction, and thoughtfully designed curriculum ensure that every student feels seen, celebrated, and challenged in exactly the right way.</p>
+        <p>We are proud to be a community fixture — a safe, joyful space where lifelong friendships are formed and a love of movement is ignited.</p>
+        <div class="about-stats" aria-label="Studio highlights">
+          <div class="stat">
+            <span class="stat-num">[X]+</span>
+            <span class="stat-label">Years Open</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">[X]+</span>
+            <span class="stat-label">Students Enrolled</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Recitals / Year</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">4</span>
+            <span class="stat-label">Class Styles</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Meet Stacey Benson</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     GALLERY
+══════════════════════════════════════ -->
+<section id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">In the Studio</span>
+      <h2 class="section-title" id="gallery-heading">Check Out Movin 'n' Groovin'!</h2>
+      <span class="gold-divider centered" aria-hidden="true"></span>
+      <p class="section-sub">A peek into the joy, creativity, and hard work that happens every week in our classes.</p>
+    </div>
+
+    <div class="gallery-grid" role="list">
+      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: recital performance]" aria-label="Open photo: recital performance">
+        <div class="placeholder" role="img" aria-label="Photo: recital performance on stage">[PHOTO: recital performance]</div>
+        <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
+      </div>
+      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: ballet class]" aria-label="Open photo: ballet class">
+        <div class="placeholder" role="img" aria-label="Photo: children in a ballet class">[PHOTO: ballet class]</div>
+        <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
+      </div>
+      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: hip hop class]" aria-label="Open photo: hip hop class">
+        <div class="placeholder" role="img" aria-label="Photo: hip hop dance class in progress">[PHOTO: hip hop class]</div>
+        <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
+      </div>
+      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: yoga session]" aria-label="Open photo: yoga session">
+        <div class="placeholder" role="img" aria-label="Photo: children's yoga session">[PHOTO: yoga session]</div>
+        <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
+      </div>
+      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: summer camp fun]" aria-label="Open photo: summer camp fun">
+        <div class="placeholder" role="img" aria-label="Photo: children having fun at summer dance camp">[PHOTO: summer camp fun]</div>
+        <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
+      </div>
+      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: awards and recital bouquets]" aria-label="Open photo: awards and recital bouquets">
+        <div class="placeholder" role="img" aria-label="Photo: young dancers receiving flowers after recital">[PHOTO: awards &amp; recital bouquets]</div>
+        <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image preview">&times;</button>
+    <div class="placeholder" id="lightbox-content" role="img" aria-label="Enlarged gallery photo" style="aspect-ratio:4/3;border-radius:0;border:none;font-size:1rem;"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
+<section id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">Parent Love</span>
+      <h2 class="section-title" id="testimonials-heading">What Our Families Are Saying</h2>
+      <span class="gold-divider centered" aria-hidden="true"></span>
+    </div>
+    <div class="testimonials-grid">
+
+      <article class="testimonial-card">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Movin 'n' Groovin' has been truly transformative for my daughter. She was incredibly shy when she started at age four, and now she performs on stage with the biggest smile. Stacey is patient, passionate, and so nurturing — we couldn't imagine our week without it!"</p>
+        <span class="testimonial-author">— Sarah M., parent of two Movin 'n' Groovin' students</span>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"We tried a few studios before finding Movin 'n' Groovin', and this one is just different. The class sizes are small, the teachers truly know every child's name and personality, and the recitals are absolutely magical. My son asks about his hip hop class every single day!"</p>
+        <span class="testimonial-author">— James T., Movin 'n' Groovin' parent since 2022</span>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"As a first-time dance mom, I was nervous about finding the right fit. The team at Movin 'n' Groovin' made us feel welcome from day one. My three-year-old adores her ballet class, and I love that they focus equally on joy and proper technique. Highly recommend to every family!"</p>
+        <span class="testimonial-author">— Priya K., Movin 'n' Groovin' parent</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SCHEDULE
+══════════════════════════════════════ -->
+<section id="schedule" aria-labelledby="schedule-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Weekly Schedule</span>
+      <h2 class="section-title" id="schedule-heading">Class Schedule &amp; Studio Info</h2>
+      <span class="gold-divider" aria-hidden="true"></span>
+      <p class="section-sub">Find the perfect class time for your family. New sessions begin each semester.</p>
+    </div>
+
+    <div class="schedule-wrap">
+      <div class="schedule-table-wrap">
+        <table aria-label="Weekly class schedule">
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Ballet</th>
+              <th scope="col">Hip Hop</th>
+              <th scope="col">Yoga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>Ballet 2–4 yrs<br><span class="time-slot">4:00 – 4:45 PM</span></td>
+              <td>—</td>
+              <td>Yoga 2–5 yrs<br><span class="time-slot">5:00 – 5:45 PM</span></td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>—</td>
+              <td>Hip Hop 3–6 yrs<br><span class="time-slot">4:00 – 4:50 PM</span></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>Ballet 5–8 yrs<br><span class="time-slot">4:30 – 5:15 PM</span></td>
+              <td>Hip Hop 7–12 yrs<br><span class="time-slot">5:30 – 6:15 PM</span></td>
+              <td>Yoga 6–12 yrs<br><span class="time-slot">4:30 – 5:15 PM</span></td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>Ballet 9–12 yrs<br><span class="time-slot">4:30 – 5:30 PM</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>—</td>
+              <td>Hip Hop All Ages<br><span class="time-slot">11:15 AM – 12:00 PM</span></td>
+              <td>Family Yoga<br><span class="time-slot">9:00 – 9:45 AM</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="schedule-info">
+        <div class="info-box" aria-labelledby="dresscode-heading">
+          <h3 id="dresscode-heading">Ballet Dress Code</h3>
+          <ul>
+            <li>Pink footed tights</li>
+            <li>Solid color leotard (any color)</li>
+            <li>Pink leather or canvas ballet shoes</li>
+            <li>Hair neatly secured in a bun</li>
+            <li>Skirts optional for younger students</li>
+          </ul>
+        </div>
+        <div class="info-box" aria-labelledby="hiphopdress-heading">
+          <h3 id="hiphopdress-heading">Hip Hop &amp; Yoga Dress Code</h3>
+          <ul>
+            <li>Comfortable, form-fitting athletic wear</li>
+            <li>Clean sneakers or bare feet for yoga</li>
+            <li>Hair pulled back and secured</li>
+            <li>No loose jewelry</li>
+          </ul>
+        </div>
+        <div class="schedule-dl">
+          <p style="font-size:0.9rem;color:var(--text-mid);margin-bottom:0.85rem;">Need the complete schedule including makeup classes, school partnership times, and holiday closures?</p>
+          <a href="#" class="btn btn-gold" aria-label="Download Full Schedule PDF (placeholder link)">⬇ Download Full Schedule (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div>
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-title" id="contact-heading">Come Dance With Us at Movin 'n' Groovin'!</h2>
+          <span class="gold-divider" aria-hidden="true"></span>
+          <p style="color:var(--text-mid);font-size:0.97rem;">We'd love to hear from you! Whether you have questions about classes, want to schedule a trial, or just want to learn more — reach out and we'll get back to you promptly.</p>
+        </div>
+
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon" aria-hidden="true">📞</div>
+            <div class="info-item-text">
+              <strong>Phone</strong>
+              <span><a href="tel:+19142202333">914-220-2333</a></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon" aria-hidden="true">✉️</div>
+            <div class="info-item-text">
+              <strong>Email</strong>
+              <span><a href="mailto:movinngroovindanceandfitness@gmail.com">movinngroovindanceandfitness@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon" aria-hidden="true">🕐</div>
+            <div class="info-item-text">
+              <strong>Studio Hours</strong>
+              <span>Varies by class</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 style="font-size:1.4rem;margin-bottom:1.5rem;">Send Us a Message</h3>
+        <form action="#" method="post" novalidate aria-label="Contact form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name <span aria-hidden="true" style="color:var(--pink-deep)">*</span></label>
+              <input type="text" id="fname" name="first_name" placeholder="Jane" required autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name <span aria-hidden="true" style="color:var(--pink-deep)">*</span></label>
+              <input type="text" id="lname" name="last_name" placeholder="Smith" required autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span aria-hidden="true" style="color:var(--pink-deep)">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span aria-hidden="true" style="color:var(--pink-deep)">*</span></label>
+            <textarea id="message" name="message" placeholder="Tell us about your child's age and which class interests you…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message ✉</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img src="file:///C:/Users/kevin/.cursor/projects/c-Users-kevin-Downloads-Test-Websites/assets/c__Users_kevin_AppData_Roaming_Cursor_User_workspaceStorage_54ddbd1d3fc9daedb215f9b9128d46e4_images_image-b1517b49-e7ae-455f-82d7-6bf17bb43d9f.png" alt="Movin 'n' Groovin' logo" />
+        <p>A warm, community-focused children's dance and fitness studio nurturing young movers aged 2–12 through ballet, hip hop, yoga, and so much more.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://www.facebook.com/childrensdanceandfitness/" target="_blank" rel="noopener noreferrer" aria-label="Movin 'n' Groovin' on Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+        <p class="footer-contact">📞 <a href="tel:+19142202333">914-220-2333</a><br>✉️ <a href="mailto:movinngroovindanceandfitness@gmail.com">movinngroovindanceandfitness@gmail.com</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#classes">Our Classes</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Classes</h4>
+        <ul>
+          <li><a href="#classes">Ballet for Kids</a></li>
+          <li><a href="#classes">Hip Hop</a></li>
+          <li><a href="#classes">Yoga for Kids</a></li>
+          <li><a href="#classes">Summer Camp</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2025 Movin 'n' Groovin'. All rights reserved.</span>
+      <div style="display:flex;gap:1.25rem;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="scroll-top" aria-label="Scroll back to top">↑</button>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+  // ── Hamburger menu ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close mobile menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ── Active nav link on scroll ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const observerOpts = { rootMargin: '-40% 0px -55% 0px' };
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, observerOpts);
+
+  sections.forEach(s => sectionObserver.observe(s));
+
+  // ── Scroll to top button ──
+  const scrollBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 500);
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── Gallery lightbox ──
+  const lightbox = document.getElementById('lightbox');
+  const lightboxContent = document.getElementById('lightbox-content');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    const open = () => {
+      const label = item.dataset.label || '[PHOTO]';
+      lightboxContent.textContent = label;
+      lightboxContent.setAttribute('aria-label', 'Enlarged view: ' + label);
+      lightbox.classList.add('active');
+      lightboxClose.focus();
+    };
+    item.addEventListener('click', open);
+    item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+
+  const closeLightbox = () => lightbox.classList.remove('active');
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  // ── Contact form feedback ──
+  document.querySelector('.contact-form form').addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('[type="submit"]');
+    btn.textContent = 'Message Sent! ✓';
+    btn.style.background = '#7ec8a0';
+    btn.style.borderColor = '#7ec8a0';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send Message ✉';
+      btn.style.background = '';
+      btn.style.borderColor = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3500);
+  });
+</script>
+</body>
+</html>
