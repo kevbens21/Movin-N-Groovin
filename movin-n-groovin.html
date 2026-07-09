@@ -4,6 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Movin 'n' Groovin' | Children's Dance & Fitness</title>
+  <meta name="description" content="Movin 'n' Groovin' offers ballet, hip hop, yoga, and fitness classes for children ages 2 to 12. Small class sizes, caring instruction, and two recitals a year." />
+
+  <!-- Canonical & robots -->
+  <!-- NOTE: swap the placeholder domain below for your real domain once the site is live -->
+  <link rel="canonical" href="https://www.movinngroovindance.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#e8829a" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:site_name" content="Movin 'n' Groovin'" />
+  <meta property="og:title" content="Movin 'n' Groovin' | Children's Dance & Fitness" />
+  <meta property="og:description" content="Where every child finds their rhythm — ballet, hip hop, yoga & fitness for ages 2 to 12." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.movinngroovindance.com/" />
+  <meta property="og:image" content="https://www.movinngroovindance.com/images/logo.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Movin 'n' Groovin' | Children's Dance & Fitness" />
+  <meta name="twitter:description" content="Where every child finds their rhythm — ballet, hip hop, yoga & fitness for ages 2 to 12." />
+  <meta name="twitter:image" content="https://www.movinngroovindance.com/images/logo.jpg" />
+
+  <!-- Structured Data (LocalBusiness / Dance School) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DanceSchool",
+    "name": "Movin 'n' Groovin'",
+    "alternateName": "Movin 'n' Groovin' Children's Dance & Fitness",
+    "description": "Children's dance and fitness studio offering ballet, hip hop, and PreBallet/Tap classes for ages 2 to 12.",
+    "url": "https://www.movinngroovindance.com/",
+    "logo": "https://www.movinngroovindance.com/images/logo.jpg",
+    "image": "https://www.movinngroovindance.com/images/hero-bg.jpg",
+    "telephone": "+1-914-220-2333",
+    "email": "movinngroovindanceandfitness@gmail.com",
+    "priceRange": "$110-$125",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "North Richland Hills",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.facebook.com/childrensdanceandfitness/"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -193,6 +246,7 @@
     }
     .nav-social a:hover { background: var(--pink-deep); color: var(--white); transform: scale(1.1); }
     .nav-social svg { width: 18px; height: 18px; fill: currentColor; }
+    .nav-cta { padding: 0.6rem 1.35rem; font-size: 0.85rem; white-space: nowrap; }
 
     /* hamburger */
     .hamburger {
@@ -235,7 +289,7 @@
     /* ─── HERO ─── */
     #hero {
       position: relative;
-      min-height: 92vh;
+      min-height: clamp(560px, 82vh, 760px);
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -254,39 +308,45 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(45,32,52,0.55) 0%, rgba(45,32,52,0.25) 100%);
+      background: linear-gradient(180deg, rgba(45,32,52,0.22) 0%, rgba(45,32,52,0.42) 100%);
       z-index: 1;
     }
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 680px;
+      max-width: 620px;
+      padding: 2.5rem 2.75rem;
+      background: rgba(22,13,28,0.44);
+      backdrop-filter: blur(8px);
+      border-radius: 22px;
     }
     .hero-badge {
       display: inline-block;
-      background: rgba(201,168,76,0.9);
+      background: var(--gold);
       color: var(--white);
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 50px;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
     .hero-content h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-size: clamp(2.75rem, 6.8vw, 4.5rem);
+      line-height: 1.12;
       color: var(--white);
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 16px rgba(0,0,0,0.2);
+      margin-bottom: 1.25rem;
     }
     .hero-content p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 2rem;
+      font-size: clamp(1.1rem, 2.6vw, 1.3rem);
+      line-height: 1.6;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 2.25rem;
       font-weight: 500;
     }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-btns .btn { padding: 0.9rem 2rem; font-size: 1rem; }
 
     /* ─── FEATURES ─── */
     #features {
@@ -354,6 +414,15 @@
       background: linear-gradient(135deg, var(--pink-soft), var(--lavender-soft));
       font-size: 0.82rem;
     }
+    .class-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center 12%;
+      display: block;
+      transition: var(--transition);
+    }
+    .class-card:hover .class-img { transform: scale(1.04); }
     .class-body {
       padding: 1.4rem 1.5rem 1.75rem;
       display: flex;
@@ -386,23 +455,28 @@
     }
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
+      grid-template-columns: 0.85fr 1fr;
+      gap: 3rem;
       align-items: center;
+    }
+    .about-photo {
+      display: flex;
+      justify-content: center;
     }
     .about-photo .placeholder {
       width: 100%;
-      aspect-ratio: 3/4;
-      max-height: 520px;
+      aspect-ratio: 4/5;
+      max-height: 560px;
     }
     .about-photo img {
       width: 100%;
-      max-width: 420px;
-      aspect-ratio: 1;
+      max-width: 480px;
+      aspect-ratio: 4/5;
       object-fit: cover;
-      object-position: center;
+      object-position: top center;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      border: 6px solid var(--white);
     }
     .about-text .section-label { display: block; }
     .about-text h2 { margin-bottom: 0.5rem; }
@@ -410,14 +484,17 @@
       color: var(--text-mid);
       margin-bottom: 1.25rem;
       font-size: 0.97rem;
+      line-height: 1.7;
     }
     .about-stats {
       display: flex;
-      gap: 2rem;
-      margin: 1.5rem 0 2rem;
+      gap: 1.75rem;
+      margin: 1.75rem 0 2rem;
       flex-wrap: wrap;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(139,107,191,0.25);
     }
-    .stat { text-align: center; }
+    .stat { text-align: center; min-width: 90px; }
     .stat-num {
       display: block;
       font-family: 'Playfair Display', serif;
@@ -576,29 +653,45 @@
       align-items: start;
     }
     .schedule-table-wrap {
-      overflow-x: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .day-card {
+      background: var(--white);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
-    table {
+    .day-card-header {
+      background: var(--lavender-deep);
+      color: var(--white);
+      padding: 0.65rem 1.1rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
+    }
+    .day-card table {
       width: 100%;
       border-collapse: collapse;
       background: var(--white);
       font-size: 0.88rem;
     }
-    thead tr { background: var(--lavender-deep); color: var(--white); }
-    thead th {
-      padding: 0.85rem 0.75rem;
-      text-align: left;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      font-size: 0.82rem;
+    .day-card tbody tr:hover { background: var(--pink-soft); }
+    .day-card tbody tr:not(:last-child) td { border-bottom: 1px solid var(--lavender-soft); }
+    .day-card tbody td {
+      padding: 0.65rem 1.1rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      vertical-align: middle;
     }
-    tbody tr:nth-child(even) { background: var(--lavender-soft); }
-    tbody tr:hover { background: var(--pink-soft); }
-    tbody td { padding: 0.75rem; color: var(--text-mid); vertical-align: top; }
-    tbody td:first-child { font-weight: 700; color: var(--text-dark); }
-    .time-slot { font-size: 0.8rem; color: var(--text-light); }
+    .day-card tbody td.time-cell {
+      text-align: right;
+      color: var(--text-light);
+      font-weight: 500;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
 
     .schedule-info { display: flex; flex-direction: column; gap: 1.5rem; }
     .info-box {
@@ -750,7 +843,7 @@
     /* ─── SCROLL TO TOP ─── */
     #scroll-top {
       position: fixed;
-      bottom: 2rem; right: 2rem;
+      bottom: 5.5rem; right: 2rem;
       background: var(--pink-deep);
       color: var(--white);
       border: none;
@@ -768,6 +861,68 @@
     #scroll-top.visible { opacity: 1; pointer-events: auto; }
     #scroll-top:hover { background: #d4607a; transform: translateY(-3px); }
 
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .features-grid .reveal:nth-child(1) { transition-delay: 0s; }
+    .features-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+    .features-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+    .features-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+    .classes-grid .reveal:nth-child(1) { transition-delay: 0s; }
+    .classes-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+    .classes-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+    .classes-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+    .testimonials-grid .reveal:nth-child(1) { transition-delay: 0s; }
+    .testimonials-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+    .testimonials-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+    .schedule-table-wrap .reveal:nth-child(1) { transition-delay: 0s; }
+    .schedule-table-wrap .reveal:nth-child(2) { transition-delay: 0.08s; }
+    .schedule-table-wrap .reveal:nth-child(3) { transition-delay: 0.16s; }
+    .schedule-table-wrap .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+    /* ─── STICKY SIGN-UP BAR ─── */
+    #sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--pink-deep);
+      color: var(--white);
+      padding: 0.7rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      box-shadow: 0 -4px 20px rgba(45,32,52,0.2);
+      transform: translateY(100%);
+      transition: transform 0.35s ease;
+      z-index: 950;
+    }
+    #sticky-cta.visible { transform: translateY(0); }
+    #sticky-cta p { font-size: 0.88rem; font-weight: 600; margin: 0; }
+    #sticky-cta .btn { padding: 0.55rem 1.4rem; font-size: 0.85rem; }
+    #sticky-cta-close {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.8);
+      font-size: 1.3rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0 0.25rem;
+    }
+    #sticky-cta-close:hover { color: var(--white); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      #sticky-cta { transition: none !important; }
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .about-grid,
@@ -777,16 +932,19 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 700px) {
-      .nav-links, .nav-social { display: none; }
+      .nav-links, .nav-social, .nav-cta { display: none; }
       .hamburger { display: flex; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; }
+      .hero-content { padding: 1.75rem; border-radius: 16px; }
     }
     @media (max-width: 480px) {
       .gallery-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .about-stats { gap: 1.25rem; }
+      #sticky-cta p { display: none; }
+      #sticky-cta { gap: 0.75rem; }
     }
   </style>
 </head>
@@ -799,7 +957,7 @@
   <div class="container">
     <nav class="nav-inner" aria-label="Main navigation">
       <a href="#hero" class="nav-logo" aria-label="Movin 'n' Groovin' Home">
-        <img src="file:///C:/Users/kevin/.cursor/projects/c-Users-kevin-Downloads-Test-Websites/assets/c__Users_kevin_AppData_Roaming_Cursor_User_workspaceStorage_54ddbd1d3fc9daedb215f9b9128d46e4_images_image-b1517b49-e7ae-455f-82d7-6bf17bb43d9f.png" alt="Movin 'n' Groovin' logo" />
+        <img src="images/logo.jpg" alt="Movin 'n' Groovin' Children's Dance &amp; Fitness logo" />
       </a>
 
       <ul class="nav-links" role="list">
@@ -817,6 +975,8 @@
         </a>
       </div>
 
+      <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer">Sign Up Now</a>
+
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -829,6 +989,7 @@
       <a href="#gallery">Gallery</a>
       <a href="#schedule">Schedule</a>
       <a href="#contact">Contact</a>
+      <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="margin-top:0.5rem;text-align:center;">Sign Up Now</a>
     </div>
   </div>
 </header>
@@ -838,17 +999,17 @@
 ══════════════════════════════════════ -->
 <section id="hero" aria-labelledby="hero-heading">
   <div class="hero-bg">
-    <img src="images/hero.png" alt="Young dancers practicing ballet in a bright studio" />
+    <img src="images/hero-bg.jpg" alt="Happy children dancing together in a bright, sunny dance studio" />
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-content">
       <span class="hero-badge">✨ Enrolling Now for Fall 2026</span>
       <h1 id="hero-heading">Where Every Child Finds Their Rhythm</h1>
-      <p>Movin 'n' Groovin' — Ballet &bull; Hip Hop &bull; Yoga &bull; Fitness for Ages 2 to 12</p>
+      <p>Ballet, hip hop, yoga &amp; fitness for ages 2 to 12 — building confidence, creativity, and a lifelong love of movement.</p>
       <div class="hero-btns">
         <a href="#classes" class="btn btn-primary">View Classes</a>
-        <a href="#contact" class="btn btn-outline">Register Now</a>
+        <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Sign Up Now</a>
       </div>
     </div>
   </div>
@@ -859,29 +1020,29 @@
 ══════════════════════════════════════ -->
 <section id="features" aria-labelledby="features-heading">
   <div class="container">
-    <div class="section-header centered">
+    <div class="section-header centered reveal">
       <span class="section-label">Why Choose Us</span>
       <h2 class="section-title" id="features-heading">What Makes Movin 'n' Groovin' Special</h2>
       <span class="gold-divider centered" aria-hidden="true"></span>
       <p class="section-sub">We create a warm, nurturing space where young dancers grow in confidence, creativity, and joy — every single class.</p>
     </div>
     <div class="features-grid">
-      <article class="feature-card">
+      <article class="feature-card reveal">
         <div class="feature-icon" aria-hidden="true">🩰</div>
         <h3>Specialized Instruction</h3>
         <p>Our age-appropriate curriculum is built around safe, structured learning that develops technique, musicality, and body awareness in a positive, encouraging environment.</p>
       </article>
-      <article class="feature-card">
+      <article class="feature-card reveal">
         <div class="feature-icon" aria-hidden="true">🌟</div>
         <h3>Annual Recitals</h3>
         <p>Every dancer gets to shine on stage! We hold two recitals per year — one at the end of each semester — giving students a meaningful goal to work toward and a memorable performance experience.</p>
       </article>
-      <article class="feature-card">
+      <article class="feature-card reveal">
         <div class="feature-icon" aria-hidden="true">🏫</div>
         <h3>School Partnerships</h3>
         <p>We bring the joy of dance directly to children through our partnerships with local preschools and daycares, making quality dance education accessible to more families in our community.</p>
       </article>
-      <article class="feature-card">
+      <article class="feature-card reveal">
         <div class="feature-icon" aria-hidden="true">💪</div>
         <h3>Fun &amp; Fitness</h3>
         <p>Beyond technique, every class emphasizes confidence, creativity, and physical health. Our students develop strong bodies and even stronger self-esteem — in an atmosphere that always puts fun first.</p>
@@ -895,16 +1056,17 @@
 ══════════════════════════════════════ -->
 <section id="classes" aria-labelledby="classes-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <span class="section-label">Our Programs</span>
       <h2 class="section-title" id="classes-heading">Classes for Every Little Dancer</h2>
       <span class="gold-divider" aria-hidden="true"></span>
       <p class="section-sub">From first plié to freestyle flow — we have the perfect class waiting for your child.</p>
+      <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="margin-top:1.5rem;">Sign Up Now</a>
     </div>
     <div class="classes-grid">
 
-      <article class="class-card">
-        <div class="placeholder" role="img" aria-label="Class image: young children in ballet attire at the barre">[CLASS IMAGE: Ballet for Kids]</div>
+      <article class="class-card reveal">
+        <img class="class-img" src="images/class-ballet.jpg" alt="Young dancer in a pink tutu practicing ballet in the studio" />
         <div class="class-body">
           <span class="class-tag">Ages 2 – 12</span>
           <h3>Ballet for Kids</h3>
@@ -913,8 +1075,8 @@
         </div>
       </article>
 
-      <article class="class-card">
-        <div class="placeholder" role="img" aria-label="Class image: children dancing hip hop in a studio">[CLASS IMAGE: Hip Hop]</div>
+      <article class="class-card reveal">
+        <img class="class-img" src="images/class-hiphop.jpg" alt="Children dancing hip hop together in a studio" />
         <div class="class-body">
           <span class="class-tag">Ages 3 – 12</span>
           <h3>Hip Hop</h3>
@@ -923,8 +1085,8 @@
         </div>
       </article>
 
-      <article class="class-card">
-        <div class="placeholder" role="img" aria-label="Class image: children in a yoga for kids class">[CLASS IMAGE: Yoga for Kids]</div>
+      <article class="class-card reveal">
+        <img class="class-img" src="images/class-yoga.jpg" alt="Child practicing yoga with classmates on mats" />
         <div class="class-body">
           <span class="class-tag">Ages 2 – 12</span>
           <h3>Yoga for Kids</h3>
@@ -933,8 +1095,8 @@
         </div>
       </article>
 
-      <article class="class-card">
-        <div class="placeholder" role="img" aria-label="Class image: children at a summer dance camp">[CLASS IMAGE: Summer Camp]</div>
+      <article class="class-card reveal">
+        <img class="class-img" src="images/class-summer-camp.jpg" alt="Children playing with a colorful parachute at summer dance camp" />
         <div class="class-body">
           <span class="class-tag">Seasonal — Summer</span>
           <h3>Summer Camp</h3>
@@ -953,10 +1115,10 @@
 <section id="about" aria-labelledby="about-heading">
   <div class="container">
     <div class="about-grid">
-      <div class="about-photo">
-        <img src="images/stacey-benson.png" alt="Stacey Benson, founder and instructor of Movin 'n' Groovin'" />
+      <div class="about-photo reveal">
+        <img src="images/stacey-benson.jpg" alt="Stacey Benson, founder and instructor of Movin 'n' Groovin', smiling in the dance studio" />
       </div>
-      <div class="about-text">
+      <div class="about-text reveal">
         <span class="section-label">Our Story</span>
         <h2 class="section-title" id="about-heading">Passion, Heart &amp; a Love of Dance</h2>
         <span class="gold-divider" aria-hidden="true"></span>
@@ -965,20 +1127,16 @@
         <p>We are proud to be a community fixture — a safe, joyful space where lifelong friendships are formed and a love of movement is ignited.</p>
         <div class="about-stats" aria-label="Studio highlights">
           <div class="stat">
-            <span class="stat-num">[X]+</span>
-            <span class="stat-label">Years Open</span>
+            <span class="stat-num">2&ndash;<span class="count" data-target="12">0</span></span>
+            <span class="stat-label">Ages Welcome</span>
           </div>
           <div class="stat">
-            <span class="stat-num">[X]+</span>
-            <span class="stat-label">Students Enrolled</span>
+            <span class="stat-num"><span class="count" data-target="3">0</span></span>
+            <span class="stat-label">Dance Styles</span>
           </div>
           <div class="stat">
-            <span class="stat-num">2</span>
+            <span class="stat-num"><span class="count" data-target="2">0</span></span>
             <span class="stat-label">Recitals / Year</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">4</span>
-            <span class="stat-label">Class Styles</span>
           </div>
         </div>
         <a href="#contact" class="btn btn-primary">Meet Stacey Benson</a>
@@ -992,7 +1150,7 @@
 ══════════════════════════════════════ -->
 <section id="gallery" aria-labelledby="gallery-heading">
   <div class="container">
-    <div class="section-header centered">
+    <div class="section-header centered reveal">
       <span class="section-label">In the Studio</span>
       <h2 class="section-title" id="gallery-heading">Check Out Movin 'n' Groovin'!</h2>
       <span class="gold-divider centered" aria-hidden="true"></span>
@@ -1041,28 +1199,28 @@
 ══════════════════════════════════════ -->
 <section id="testimonials" aria-labelledby="testimonials-heading">
   <div class="container">
-    <div class="section-header centered">
+    <div class="section-header centered reveal">
       <span class="section-label">Parent Love</span>
       <h2 class="section-title" id="testimonials-heading">What Our Families Are Saying</h2>
       <span class="gold-divider centered" aria-hidden="true"></span>
     </div>
     <div class="testimonials-grid">
 
-      <article class="testimonial-card">
+      <article class="testimonial-card reveal">
         <div class="quote-mark" aria-hidden="true">&ldquo;</div>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p>"Movin 'n' Groovin' has been truly transformative for my daughter. She was incredibly shy when she started at age four, and now she performs on stage with the biggest smile. Stacey is patient, passionate, and so nurturing — we couldn't imagine our week without it!"</p>
         <span class="testimonial-author">— Sarah M., parent of two Movin 'n' Groovin' students</span>
       </article>
 
-      <article class="testimonial-card">
+      <article class="testimonial-card reveal">
         <div class="quote-mark" aria-hidden="true">&ldquo;</div>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p>"We tried a few studios before finding Movin 'n' Groovin', and this one is just different. The class sizes are small, the teachers truly know every child's name and personality, and the recitals are absolutely magical. My son asks about his hip hop class every single day!"</p>
         <span class="testimonial-author">— James T., Movin 'n' Groovin' parent since 2022</span>
       </article>
 
-      <article class="testimonial-card">
+      <article class="testimonial-card reveal">
         <div class="quote-mark" aria-hidden="true">&ldquo;</div>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p>"As a first-time dance mom, I was nervous about finding the right fit. The team at Movin 'n' Groovin' made us feel welcome from day one. My three-year-old adores her ballet class, and I love that they focus equally on joy and proper technique. Highly recommend to every family!"</p>
@@ -1078,62 +1236,66 @@
 ══════════════════════════════════════ -->
 <section id="schedule" aria-labelledby="schedule-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <span class="section-label">Weekly Schedule</span>
       <h2 class="section-title" id="schedule-heading">Class Schedule &amp; Studio Info</h2>
       <span class="gold-divider" aria-hidden="true"></span>
-      <p class="section-sub">Find the perfect class time for your family. New sessions begin each semester.</p>
+      <p class="section-sub">Fall Session starts the week of August 3, 2026 &bull; 6 weekly classes per program (end dates vary slightly by day) &bull; $110&ndash;$125 per session &bull; NRH Centre, North Richland Hills</p>
     </div>
 
     <div class="schedule-wrap">
       <div class="schedule-table-wrap">
-        <table aria-label="Weekly class schedule">
-          <thead>
-            <tr>
-              <th scope="col">Day</th>
-              <th scope="col">Ballet</th>
-              <th scope="col">Hip Hop</th>
-              <th scope="col">Yoga</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Monday</td>
-              <td>Ballet 2–4 yrs<br><span class="time-slot">4:00 – 4:45 PM</span></td>
-              <td>—</td>
-              <td>Yoga 2–5 yrs<br><span class="time-slot">5:00 – 5:45 PM</span></td>
-            </tr>
-            <tr>
-              <td>Tuesday</td>
-              <td>—</td>
-              <td>Hip Hop 3–6 yrs<br><span class="time-slot">4:00 – 4:50 PM</span></td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>Wednesday</td>
-              <td>Ballet 5–8 yrs<br><span class="time-slot">4:30 – 5:15 PM</span></td>
-              <td>Hip Hop 7–12 yrs<br><span class="time-slot">5:30 – 6:15 PM</span></td>
-              <td>Yoga 6–12 yrs<br><span class="time-slot">4:30 – 5:15 PM</span></td>
-            </tr>
-            <tr>
-              <td>Thursday</td>
-              <td>Ballet 9–12 yrs<br><span class="time-slot">4:30 – 5:30 PM</span></td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>Saturday</td>
-              <td>—</td>
-              <td>Hip Hop All Ages<br><span class="time-slot">11:15 AM – 12:00 PM</span></td>
-              <td>Family Yoga<br><span class="time-slot">9:00 – 9:45 AM</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="day-card reveal">
+          <div class="day-card-header">Monday</div>
+          <table aria-label="Monday class schedule">
+            <tbody>
+              <tr><td>PreBallet/Tap 2.5&ndash;3.5 yrs</td><td class="time-cell">10:00 &ndash; 10:30 AM</td></tr>
+              <tr><td>PreBallet/Tap 3y6m&ndash;5 yrs</td><td class="time-cell">10:30 &ndash; 11:15 AM</td></tr>
+              <tr><td>Ballet/Tap/Jazz 4&ndash;5y5m</td><td class="time-cell">5:15 &ndash; 6:00 PM</td></tr>
+              <tr><td>Ballet/Tap/Jazz 5y6m&ndash;7 yrs</td><td class="time-cell">6:00 &ndash; 6:45 PM</td></tr>
+              <tr><td>Advanced Hip Hop 10&ndash;16 yrs</td><td class="time-cell">6:45 &ndash; 7:30 PM</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="day-card reveal">
+          <div class="day-card-header">Tuesday</div>
+          <table aria-label="Tuesday class schedule">
+            <tbody>
+              <tr><td>PreBallet/Tap 3&ndash;4 yrs</td><td class="time-cell">5:15 &ndash; 6:00 PM</td></tr>
+              <tr><td>Ballet/Tap/Jazz 5&ndash;6 yrs</td><td class="time-cell">6:00 &ndash; 6:45 PM</td></tr>
+              <tr><td>Ballet/Tap/Jazz 7&ndash;9 yrs</td><td class="time-cell">6:45 &ndash; 7:30 PM</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="day-card reveal">
+          <div class="day-card-header">Wednesday</div>
+          <table aria-label="Wednesday class schedule">
+            <tbody>
+              <tr><td>PreBallet/Tap 3&ndash;5 yrs</td><td class="time-cell">10:30 &ndash; 11:15 AM</td></tr>
+              <tr><td>Beginner Hip Hop 4&ndash;5 yrs</td><td class="time-cell">5:15 &ndash; 5:45 PM</td></tr>
+              <tr><td>Beginner Hip Hop 6&ndash;10 yrs</td><td class="time-cell">5:45 &ndash; 6:30 PM</td></tr>
+              <tr><td>Ballet/Tap/Jazz 7&ndash;10 yrs</td><td class="time-cell">6:30 &ndash; 7:15 PM</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="day-card reveal">
+          <div class="day-card-header">Thursday</div>
+          <table aria-label="Thursday class schedule">
+            <tbody>
+              <tr><td>PreBallet/Tap 3&ndash;4 yrs</td><td class="time-cell">5:15 &ndash; 6:00 PM</td></tr>
+              <tr><td>Ballet/Tap/Jazz 5&ndash;7 yrs</td><td class="time-cell">6:00 &ndash; 6:45 PM</td></tr>
+              <tr><td>Int/Advanced Hip Hop 8&ndash;10 yrs</td><td class="time-cell">6:45 &ndash; 7:30 PM</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="schedule-info">
         <div class="info-box" aria-labelledby="dresscode-heading">
-          <h3 id="dresscode-heading">Ballet Dress Code</h3>
+          <h3 id="dresscode-heading">Ballet/Tap/Jazz &amp; PreBallet Dress Code</h3>
           <ul>
             <li>Pink footed tights</li>
             <li>Solid color leotard (any color)</li>
@@ -1143,17 +1305,20 @@
           </ul>
         </div>
         <div class="info-box" aria-labelledby="hiphopdress-heading">
-          <h3 id="hiphopdress-heading">Hip Hop &amp; Yoga Dress Code</h3>
+          <h3 id="hiphopdress-heading">Hip Hop Dress Code</h3>
           <ul>
             <li>Comfortable, form-fitting athletic wear</li>
-            <li>Clean sneakers or bare feet for yoga</li>
+            <li>Clean athletic sneakers</li>
             <li>Hair pulled back and secured</li>
             <li>No loose jewelry</li>
           </ul>
         </div>
         <div class="schedule-dl">
-          <p style="font-size:0.9rem;color:var(--text-mid);margin-bottom:0.85rem;">Need the complete schedule including makeup classes, school partnership times, and holiday closures?</p>
-          <a href="#" class="btn btn-gold" aria-label="Download Full Schedule PDF (placeholder link)">⬇ Download Full Schedule (PDF)</a>
+          <p style="font-size:0.9rem;color:var(--text-mid);margin-bottom:0.85rem;">Ready to find your child's spot in the schedule?</p>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Sign Up Now</a>
+            <a href="Movin-n-Groovin-Class-Schedule.pdf" class="btn btn-outline-dark" download>&#8681; Full Schedule (PDF)</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1198,11 +1363,17 @@
             </div>
           </div>
         </div>
+
+        <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="align-self:flex-start;">Sign Up Now</a>
       </div>
 
       <div class="contact-form">
         <h3 style="font-size:1.4rem;margin-bottom:1.5rem;">Send Us a Message</h3>
-        <form action="#" method="post" novalidate aria-label="Contact form">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate aria-label="Contact form" id="contact-form">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden" style="display:none;">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name <span aria-hidden="true" style="color:var(--pink-deep)">*</span></label>
@@ -1241,7 +1412,7 @@
     <div class="footer-grid">
 
       <div class="footer-brand">
-        <img src="file:///C:/Users/kevin/.cursor/projects/c-Users-kevin-Downloads-Test-Websites/assets/c__Users_kevin_AppData_Roaming_Cursor_User_workspaceStorage_54ddbd1d3fc9daedb215f9b9128d46e4_images_image-b1517b49-e7ae-455f-82d7-6bf17bb43d9f.png" alt="Movin 'n' Groovin' logo" />
+        <img src="images/logo.jpg" alt="Movin 'n' Groovin' Children's Dance &amp; Fitness logo" />
         <p>A warm, community-focused children's dance and fitness studio nurturing young movers aged 2–12 through ballet, hip hop, yoga, and so much more.</p>
         <div class="footer-social" aria-label="Social media links">
           <a href="https://www.facebook.com/childrensdanceandfitness/" target="_blank" rel="noopener noreferrer" aria-label="Movin 'n' Groovin' on Facebook">
@@ -1276,7 +1447,7 @@
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; 2025 Movin 'n' Groovin'. All rights reserved.</span>
+      <span>&copy; 2026 Movin 'n' Groovin'. All rights reserved.</span>
       <div style="display:flex;gap:1.25rem;">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Use</a>
@@ -1288,6 +1459,13 @@
 
 <!-- Scroll to top -->
 <button id="scroll-top" aria-label="Scroll back to top">↑</button>
+
+<!-- Sticky sign-up bar -->
+<div id="sticky-cta" role="complementary" aria-label="Enrollment call to action">
+  <p>✨ Fall enrollment is open at Movin 'n' Groovin'!</p>
+  <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Sign Up Now</a>
+  <button id="sticky-cta-close" aria-label="Dismiss enrollment banner">&times;</button>
+</div>
 
 <!-- ══════════════════════════════════════
      JAVASCRIPT
@@ -1361,21 +1539,106 @@
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-  // ── Contact form feedback ──
-  document.querySelector('.contact-form form').addEventListener('submit', e => {
+  // ── Contact form submission (Netlify Forms) ──
+  const contactForm = document.getElementById('contact-form');
+  contactForm.addEventListener('submit', e => {
     e.preventDefault();
-    const btn = e.target.querySelector('[type="submit"]');
-    btn.textContent = 'Message Sent! ✓';
-    btn.style.background = '#7ec8a0';
-    btn.style.borderColor = '#7ec8a0';
+    const form = e.target;
+    const btn = form.querySelector('[type="submit"]');
+    const originalText = btn.textContent;
     btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Send Message ✉';
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      btn.disabled = false;
-      e.target.reset();
-    }, 3500);
+    btn.textContent = 'Sending…';
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    })
+      .then(() => {
+        btn.textContent = 'Message Sent! ✓';
+        btn.style.background = '#7ec8a0';
+        btn.style.borderColor = '#7ec8a0';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.disabled = false;
+          form.reset();
+        }, 3500);
+      })
+      .catch(() => {
+        btn.textContent = 'Error — try again';
+        btn.style.background = '#e8829a';
+        btn.style.borderColor = '#e8829a';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.disabled = false;
+        }, 3500);
+      });
+  });
+
+  // ── Scroll-reveal animations ──
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealEls = document.querySelectorAll('.reveal');
+  if (prefersReducedMotion) {
+    revealEls.forEach(el => el.classList.add('visible'));
+  } else {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+  }
+
+  // ── Animated stat counters ──
+  const countEls = document.querySelectorAll('.count');
+  const animateCount = el => {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 900;
+    const start = performance.now();
+    const step = now => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    if (prefersReducedMotion) {
+      el.textContent = target;
+    } else {
+      requestAnimationFrame(step);
+    }
+  };
+  const countObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        countObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  countEls.forEach(el => countObserver.observe(el));
+
+  // ── Sticky sign-up bar ──
+  const stickyCta = document.getElementById('sticky-cta');
+  const stickyCtaClose = document.getElementById('sticky-cta-close');
+  const heroSection = document.getElementById('hero');
+  let stickyCtaDismissed = false;
+
+  window.addEventListener('scroll', () => {
+    if (stickyCtaDismissed) return;
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    stickyCta.classList.toggle('visible', heroBottom < 0);
+  });
+
+  stickyCtaClose.addEventListener('click', () => {
+    stickyCtaDismissed = true;
+    stickyCta.classList.remove('visible');
   });
 </script>
 </body>
