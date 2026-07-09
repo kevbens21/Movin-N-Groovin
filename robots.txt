@@ -1,8 +1,6 @@
 # Movin 'n' Groovin' — robots.txt
-# NOTE: Replace the placeholder domain below (movinngroovindance.com) with your real
-# domain once the site is live, then update sitemap.xml's <loc> the same way.
 
 User-agent: *
 Allow: /
 
-Sitemap: https://www.movinngroovindance.com/sitemap.xml
+Sitemap: https://letsgetmovinngroovin.com/sitemap.xml

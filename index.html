@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Movin 'n' Groovin' | Children's Dance & Fitness</title>
-  <meta name="description" content="Movin 'n' Groovin' offers ballet, hip hop, yoga, and fitness classes for children ages 2 to 12. Small class sizes, caring instruction, and two recitals a year." />
+  <meta name="description" content="Movin 'n' Groovin' offers ballet, hip hop, and fitness classes for children ages 2 and up. Small class sizes, caring instruction, and an annual recital." />
 
   <!-- Canonical & robots -->
-  <!-- NOTE: swap the placeholder domain below for your real domain once the site is live -->
-  <link rel="canonical" href="https://www.movinngroovindance.com/" />
+  <link rel="canonical" href="https://letsgetmovinngroovin.com/" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#e8829a" />
 
@@ -19,17 +18,17 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:site_name" content="Movin 'n' Groovin'" />
   <meta property="og:title" content="Movin 'n' Groovin' | Children's Dance & Fitness" />
-  <meta property="og:description" content="Where every child finds their rhythm — ballet, hip hop, yoga & fitness for ages 2 to 12." />
+  <meta property="og:description" content="Where every child finds their rhythm — ballet, hip hop & fitness for ages 2 and up." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.movinngroovindance.com/" />
-  <meta property="og:image" content="https://www.movinngroovindance.com/images/logo.jpg" />
+  <meta property="og:url" content="https://letsgetmovinngroovin.com/" />
+  <meta property="og:image" content="https://letsgetmovinngroovin.com/images/logo.jpg" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Movin 'n' Groovin' | Children's Dance & Fitness" />
-  <meta name="twitter:description" content="Where every child finds their rhythm — ballet, hip hop, yoga & fitness for ages 2 to 12." />
-  <meta name="twitter:image" content="https://www.movinngroovindance.com/images/logo.jpg" />
+  <meta name="twitter:description" content="Where every child finds their rhythm — ballet, hip hop & fitness for ages 2 and up." />
+  <meta name="twitter:image" content="https://letsgetmovinngroovin.com/images/logo.jpg" />
 
   <!-- Structured Data (LocalBusiness / Dance School) -->
   <script type="application/ld+json">
@@ -39,9 +38,9 @@
     "name": "Movin 'n' Groovin'",
     "alternateName": "Movin 'n' Groovin' Children's Dance & Fitness",
     "description": "Children's dance and fitness studio offering ballet, hip hop, and PreBallet/Tap classes for ages 2 to 12.",
-    "url": "https://www.movinngroovindance.com/",
-    "logo": "https://www.movinngroovindance.com/images/logo.jpg",
-    "image": "https://www.movinngroovindance.com/images/hero-bg.jpg",
+    "url": "https://letsgetmovinngroovin.com/",
+    "logo": "https://letsgetmovinngroovin.com/images/logo.jpg",
+    "image": "https://letsgetmovinngroovin.com/images/hero-bg.jpg",
     "telephone": "+1-914-220-2333",
     "email": "movinngroovindanceandfitness@gmail.com",
     "priceRange": "$110-$125",
@@ -303,7 +302,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 65% center;
+      object-position: 65% 62%;
     }
     .hero-overlay {
       position: absolute;
@@ -315,6 +314,7 @@
       position: relative;
       z-index: 2;
       max-width: 620px;
+      margin-left: -1.5rem;
       padding: 2.5rem 2.75rem;
       background: rgba(22,13,28,0.44);
       backdrop-filter: blur(8px);
@@ -537,6 +537,14 @@
       transition: var(--transition);
     }
     .gallery-item:nth-child(even) .placeholder { background: linear-gradient(135deg, var(--lavender-soft), #fdeef2); }
+    .gallery-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition);
+    }
+    .gallery-item:hover .gallery-img { transform: scale(1.05); }
     .gallery-overlay {
       position: absolute;
       inset: 0;
@@ -577,6 +585,7 @@
       width: 100%;
     }
     .lightbox-inner .placeholder { aspect-ratio: 4/3; border-radius: 0; border: none; font-size: 1rem; }
+    .lightbox-inner img { width: 100%; max-height: 85vh; object-fit: contain; display: block; background: var(--text-dark); }
     .lightbox-close {
       position: absolute;
       top: 1rem; right: 1rem;
@@ -937,7 +946,7 @@
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; }
-      .hero-content { padding: 1.75rem; border-radius: 16px; }
+      .hero-content { padding: 1.75rem; border-radius: 16px; margin-left: 0; }
     }
     @media (max-width: 480px) {
       .gallery-grid { grid-template-columns: 1fr; }
@@ -1008,7 +1017,7 @@
     <div class="hero-content">
       <span class="hero-badge">✨ Enrolling Now for Fall 2026</span>
       <h1 id="hero-heading">Where Every Child Finds Their Rhythm</h1>
-      <p>Ballet, hip hop, yoga &amp; fitness for ages 2 to 12 — building confidence, creativity, and a lifelong love of movement.</p>
+      <p>Ballet, hip hop &amp; fitness for ages 2 and up — building confidence, creativity, and a lifelong love of movement.</p>
       <div class="hero-btns">
         <a href="#classes" class="btn btn-primary">View Classes</a>
         <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Sign Up Now</a>
@@ -1037,7 +1046,7 @@
       <article class="feature-card reveal">
         <div class="feature-icon" aria-hidden="true">🌟</div>
         <h3>Annual Recitals</h3>
-        <p>Every dancer gets to shine on stage! We hold two recitals per year — one at the end of each semester — giving students a meaningful goal to work toward and a memorable performance experience.</p>
+        <p>Every dancer gets to shine on stage! We hold one recital per year, giving students a meaningful goal to work toward and a memorable performance experience.</p>
       </article>
       <article class="feature-card reveal">
         <div class="feature-icon" aria-hidden="true">🏫</div>
@@ -1070,7 +1079,7 @@
       <article class="class-card reveal">
         <img class="class-img" src="images/class-ballet.jpg" alt="Young dancer in a pink tutu practicing ballet in the studio" />
         <div class="class-body">
-          <span class="class-tag">Ages 2 – 12</span>
+          <span class="class-tag">Ages 2+</span>
           <h3>Ballet for Kids</h3>
           <p>A joyful introduction to classical ballet fundamentals — building posture, grace, coordination, and a lifelong love of movement in a structured yet playful setting.</p>
           <a href="#contact" class="btn btn-outline-dark">Learn More</a>
@@ -1080,7 +1089,7 @@
       <article class="class-card reveal">
         <img class="class-img" src="images/class-hiphop.jpg" alt="Children dancing hip hop together in a studio" />
         <div class="class-body">
-          <span class="class-tag">Ages 3 – 12</span>
+          <span class="class-tag">Ages 4+</span>
           <h3>Hip Hop</h3>
           <p>High-energy choreography set to age-appropriate music that lets kids express themselves freely. Builds rhythm, musicality, and genuine confidence on the dance floor.</p>
           <a href="#contact" class="btn btn-outline-dark">Learn More</a>
@@ -1088,11 +1097,11 @@
       </article>
 
       <article class="class-card reveal">
-        <img class="class-img" src="images/class-yoga.jpg" alt="Child practicing yoga with classmates on mats" />
+        <img class="class-img" src="images/class-yoga.jpg" alt="Children stretching and practicing fitness exercises together" />
         <div class="class-body">
-          <span class="class-tag">Ages 2 – 12</span>
-          <h3>Yoga for Kids</h3>
-          <p>Calming, imaginative yoga sessions designed just for children. Students build flexibility, focus, and mindfulness through storytelling, poses, and breathing exercises.</p>
+          <span class="class-tag">Ages 2+</span>
+          <h3>Fitness for Kids</h3>
+          <p>A fun, active class focused on building strength, balance, and coordination. Through movement games, stretches, and playful exercises, kids develop healthy habits and confidence in what their bodies can do.</p>
           <a href="#contact" class="btn btn-outline-dark">Learn More</a>
         </div>
       </article>
@@ -1102,7 +1111,7 @@
         <div class="class-body">
           <span class="class-tag">Seasonal — Summer</span>
           <h3>Summer Camp</h3>
-          <p>A week-long immersive dance adventure combining ballet, hip hop, yoga, games, and crafts. The perfect summer experience for young movers who want to explore every style!</p>
+          <p>An immersive dance adventure running all summer long, combining ballet, hip hop, fitness, games, and crafts. The perfect summer experience for young movers who want to explore every style!</p>
           <a href="#contact" class="btn btn-outline-dark">Learn More</a>
         </div>
       </article>
@@ -1129,7 +1138,7 @@
         <p>We are proud to be a community fixture — a safe, joyful space where lifelong friendships are formed and a love of movement is ignited.</p>
         <div class="about-stats" aria-label="Studio highlights">
           <div class="stat">
-            <span class="stat-num">2&ndash;<span class="count" data-target="12">0</span></span>
+            <span class="stat-num"><span class="count" data-target="2">0</span>+</span>
             <span class="stat-label">Ages Welcome</span>
           </div>
           <div class="stat">
@@ -1137,8 +1146,8 @@
             <span class="stat-label">Dance Styles</span>
           </div>
           <div class="stat">
-            <span class="stat-num"><span class="count" data-target="2">0</span></span>
-            <span class="stat-label">Recitals / Year</span>
+            <span class="stat-num"><span class="count" data-target="1">0</span></span>
+            <span class="stat-label">Recital / Year</span>
           </div>
         </div>
         <a href="#contact" class="btn btn-primary">Meet Stacey Benson</a>
@@ -1160,28 +1169,28 @@
     </div>
 
     <div class="gallery-grid" role="list">
-      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: recital performance]" aria-label="Open photo: recital performance">
-        <div class="placeholder" role="img" aria-label="Photo: recital performance on stage">[PHOTO: recital performance]</div>
+      <div class="gallery-item reveal" role="listitem" tabindex="0" data-full="images/gallery-recital.jpg" data-label="Recital performance" aria-label="Open photo: recital performance">
+        <img class="gallery-img" src="images/gallery-recital.jpg" alt="Two dancers in sparkly recital costumes performing on stage" loading="lazy" />
         <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
       </div>
-      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: ballet class]" aria-label="Open photo: ballet class">
-        <div class="placeholder" role="img" aria-label="Photo: children in a ballet class">[PHOTO: ballet class]</div>
+      <div class="gallery-item reveal" role="listitem" tabindex="0" data-full="images/gallery-ballet.jpg" data-label="Ballet class" aria-label="Open photo: ballet class">
+        <img class="gallery-img" src="images/gallery-ballet.jpg" alt="Young ballet students practicing at the barre" loading="lazy" />
         <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
       </div>
-      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: hip hop class]" aria-label="Open photo: hip hop class">
-        <div class="placeholder" role="img" aria-label="Photo: hip hop dance class in progress">[PHOTO: hip hop class]</div>
+      <div class="gallery-item reveal" role="listitem" tabindex="0" data-full="images/gallery-hiphop.jpg" data-label="Hip hop class" aria-label="Open photo: hip hop class">
+        <img class="gallery-img" src="images/gallery-hiphop.jpg" alt="Two boys in matching graffiti-print hip hop outfits" loading="lazy" />
         <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
       </div>
-      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: yoga session]" aria-label="Open photo: yoga session">
-        <div class="placeholder" role="img" aria-label="Photo: children's yoga session">[PHOTO: yoga session]</div>
+      <div class="gallery-item reveal" role="listitem" tabindex="0" data-full="images/gallery-team.jpg" data-label="Dance team fun" aria-label="Open photo: dance team fun">
+        <img class="gallery-img" src="images/gallery-team.jpg" alt="A large group of young dancers in matching pink outfits posing outdoors" loading="lazy" />
         <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
       </div>
-      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: summer camp fun]" aria-label="Open photo: summer camp fun">
-        <div class="placeholder" role="img" aria-label="Photo: children having fun at summer dance camp">[PHOTO: summer camp fun]</div>
+      <div class="gallery-item reveal" role="listitem" tabindex="0" data-full="images/gallery-studio.jpg" data-label="Studio sweetness" aria-label="Open photo: studio sweetness">
+        <img class="gallery-img" src="images/gallery-studio.jpg" alt="Ballet students sitting in a circle with their dance shoes and toy mermaid dolls" loading="lazy" />
         <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
       </div>
-      <div class="gallery-item" role="listitem" tabindex="0" data-label="[PHOTO: awards and recital bouquets]" aria-label="Open photo: awards and recital bouquets">
-        <div class="placeholder" role="img" aria-label="Photo: young dancers receiving flowers after recital">[PHOTO: awards &amp; recital bouquets]</div>
+      <div class="gallery-item reveal" role="listitem" tabindex="0" data-full="images/gallery-costume.jpg" data-label="Costume fun" aria-label="Open photo: costume fun">
+        <img class="gallery-img" src="images/gallery-costume.jpg" alt="Two toddlers dressed up as fairies, laughing together" loading="lazy" />
         <div class="gallery-overlay" aria-hidden="true"><span>&#43;</span></div>
       </div>
     </div>
@@ -1192,7 +1201,7 @@
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
   <div class="lightbox-inner">
     <button class="lightbox-close" id="lightbox-close" aria-label="Close image preview">&times;</button>
-    <div class="placeholder" id="lightbox-content" role="img" aria-label="Enlarged gallery photo" style="aspect-ratio:4/3;border-radius:0;border:none;font-size:1rem;"></div>
+    <img id="lightbox-content" src="" alt="" />
   </div>
 </div>
 
@@ -1415,7 +1424,7 @@
 
       <div class="footer-brand">
         <img src="images/logo.jpg" alt="Movin 'n' Groovin' Children's Dance &amp; Fitness logo" />
-        <p>A warm, community-focused children's dance and fitness studio nurturing young movers aged 2–12 through ballet, hip hop, yoga, and so much more.</p>
+        <p>A warm, community-focused children's dance and fitness studio nurturing young movers ages 2 and up through ballet, hip hop, fitness, and so much more.</p>
         <div class="footer-social" aria-label="Social media links">
           <a href="https://www.facebook.com/childrensdanceandfitness/" target="_blank" rel="noopener noreferrer" aria-label="Movin 'n' Groovin' on Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -1441,7 +1450,7 @@
         <ul>
           <li><a href="#classes">Ballet for Kids</a></li>
           <li><a href="#classes">Hip Hop</a></li>
-          <li><a href="#classes">Yoga for Kids</a></li>
+          <li><a href="#classes">Fitness for Kids</a></li>
           <li><a href="#classes">Summer Camp</a></li>
         </ul>
       </div>
@@ -1526,9 +1535,9 @@
 
   document.querySelectorAll('.gallery-item').forEach(item => {
     const open = () => {
-      const label = item.dataset.label || '[PHOTO]';
-      lightboxContent.textContent = label;
-      lightboxContent.setAttribute('aria-label', 'Enlarged view: ' + label);
+      const label = item.dataset.label || 'Gallery photo';
+      lightboxContent.src = item.dataset.full || '';
+      lightboxContent.alt = label;
       lightbox.classList.add('active');
       lightboxClose.focus();
     };
