@@ -288,9 +288,10 @@
     /* ─── HERO ─── */
     #hero {
       position: relative;
-      min-height: clamp(560px, 82vh, 760px);
+      min-height: clamp(480px, 66vh, 620px);
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: flex-end;
       overflow: hidden;
     }
     .hero-bg {
@@ -302,25 +303,20 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 65% 62%;
+      object-position: 65% 78%;
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(45,32,52,0.22) 0%, rgba(45,32,52,0.42) 100%);
+      background: linear-gradient(180deg, rgba(45,32,52,0.03) 0%, rgba(45,32,52,0.1) 55%, rgba(45,32,52,0.82) 100%);
       z-index: 1;
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 620px;
-      margin-left: -1.5rem;
-      padding: 2.5rem 2.75rem;
-      background: rgba(22,13,28,0.44);
-      backdrop-filter: blur(8px);
-      border-radius: 22px;
-    }
     .hero-badge {
+      position: relative;
+      z-index: 3;
+      align-self: flex-start;
+      width: max-content;
+      margin: 0 0 -1.5rem 6%;
       display: inline-block;
       background: var(--gold);
       color: var(--white);
@@ -328,24 +324,37 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.5rem 1.2rem;
+      padding: 0.55rem 1.3rem;
       border-radius: 50px;
-      margin-bottom: 1.5rem;
+      box-shadow: 0 6px 20px rgba(45,32,52,0.3);
     }
-    .hero-content h1 {
-      font-size: clamp(2.75rem, 6.8vw, 4.5rem);
-      line-height: 1.12;
+    .hero-bottom {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 3rem 6%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 620px;
+    }
+    .hero-text h1 {
+      font-size: clamp(2.25rem, 5.2vw, 3.6rem);
+      line-height: 1.15;
       color: var(--white);
-      margin-bottom: 1.25rem;
+      margin-bottom: 0.75rem;
     }
-    .hero-content p {
-      font-size: clamp(1.1rem, 2.6vw, 1.3rem);
+    .hero-text p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
       line-height: 1.6;
-      color: rgba(255,255,255,0.95);
-      margin-bottom: 2.25rem;
+      color: rgba(255,255,255,0.92);
       font-weight: 500;
     }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0; }
     .hero-btns .btn { padding: 0.9rem 2rem; font-size: 1rem; }
 
     /* ─── FEATURES ─── */
@@ -939,6 +948,7 @@
       .contact-grid { grid-template-columns: 1fr; }
       .about-photo { order: -1; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 700px) {
       .nav-links, .nav-social, .nav-cta { display: none; }
@@ -946,7 +956,8 @@
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; }
-      .hero-content { padding: 1.75rem; border-radius: 16px; margin-left: 0; }
+      .hero-bottom { padding: 1.75rem 6% 2rem; }
+      .hero-badge { margin-bottom: -1.25rem; }
     }
     @media (max-width: 480px) {
       .gallery-grid { grid-template-columns: 1fr; }
@@ -955,7 +966,7 @@
       #sticky-cta p { display: none; }
       #sticky-cta { gap: 0.75rem; }
       .contact-form { padding: 1.5rem; }
-      .hero-content { padding: 1.5rem; }
+      .hero-bottom { padding: 1.5rem 6% 1.75rem; }
     }
   </style>
 </head>
@@ -1013,15 +1024,15 @@
     <img src="images/hero-bg.jpg" alt="Happy children dancing together in a bright, sunny dance studio" />
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="container">
-    <div class="hero-content">
-      <span class="hero-badge">✨ Enrolling Now for Fall 2026</span>
+  <span class="hero-badge">✨ Enrolling Now for Fall 2026</span>
+  <div class="hero-bottom">
+    <div class="hero-text">
       <h1 id="hero-heading">Where Every Child Finds Their Rhythm</h1>
       <p>Ballet, hip hop &amp; fitness for ages 2 and up — building confidence, creativity, and a lifelong love of movement.</p>
-      <div class="hero-btns">
-        <a href="#classes" class="btn btn-primary">View Classes</a>
-        <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Sign Up Now</a>
-      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#classes" class="btn btn-primary">View Classes</a>
+      <a href="https://nrh.perfectmind.com/39476/Clients/BookMe4BookingPages/BookingCoursesPage?calendarId=0038a5e5-f254-4860-8030-456e1430d41a&amp;widgetId=b1f1b3e0-475b-4520-ae9a-524e18e31d93&amp;embed=False" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Sign Up Now</a>
     </div>
   </div>
 </section>
